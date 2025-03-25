@@ -7,7 +7,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
-    --color-green-500: oklch(0.723 0.219 149.579);
+    --color-white: #fff;
     --spacing: 0.25rem;
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
@@ -1040,9 +1040,6 @@
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
   }
-  .bg-green-500 {
-    background-color: var(--color-green-500);
-  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1783,6 +1780,10 @@
   .transform-view {
     transform-box: view-box;
   }
+}
+body {
+  background-color: var(--color-white);
+  padding: calc(var(--spacing) * 0);
 }
 @property --tw-translate-x {
   syntax: "*";

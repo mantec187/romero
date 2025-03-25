@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  /* Green */
+  --color-primary-300: #b9f3de;
+  --color-primary-500: #656c59;
+
+  /* Red */
+  --color-secondary-300: #ee6e7f;
+  --color-secondary-500: #6b3139;
+
+  /* Yellow */
+  --color-tertiary-300: #ffbc58;
+  --color-tertiary-500: #b68564;
+}
+
+body {
+  @apply bg-white p-0;
+}

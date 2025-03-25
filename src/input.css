@@ -1,19 +1,176 @@
 @import "tailwindcss";
+@import url("/src/fonts.css");
 
 @theme {
   /* Green */
+  --color-primary-100: #e8f7f1;
   --color-primary-300: #b9f3de;
   --color-primary-500: #656c59;
+  --color-primary-600: #3e4138;
 
   /* Red */
   --color-secondary-300: #ee6e7f;
   --color-secondary-500: #6b3139;
 
   /* Yellow */
+  --color-tertiary-100: #ffe6d5;
   --color-tertiary-300: #ffbc58;
   --color-tertiary-500: #b68564;
+
+  /* Font Nunito */
+  --font-nunito: "Nunito", sans-serif;
+
+  /* Font Recoleta */
+  --font-recoleta: "Recoleta", sans-serif;
 }
 
 body {
-  @apply bg-white p-0;
+  @apply bg-white p-0 font-nunito antialiased;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  @apply w-[90%] max-w-[1024px] mx-auto;
+}
+
+.squircle {
+  mask: paint(squircle);
+  --squircle-radius: 65px;
+  --squircle-smooth: 1;
+}
+
+.squircle-border {
+  background: paint(squircle);
+  --squircle-outline: 1px;
+  --squircle-radius: 65px;
+  --squircle-fill: #fff;
+  --squircle-smooth: 1;
+}
+
+/* Header */
+
+.header {
+  @apply bg-[url(/dist/images/header-background.webp)] bg-cover bg-center min-h-[705px] py-11 flex;
+}
+
+.header__logo-wrapper {
+  @apply inline-flex shrink-0;
+}
+
+.header__nav {
+  @apply flex justify-between;
+}
+
+.header__links-wrapper {
+  @apply flex gap-10;
+}
+
+.header__link {
+  @apply text-sm uppercase font-bold text-white transition-colors duration-500;
+
+  &:hover {
+    @apply text-primary-300;
+  }
+}
+
+.header__baseline-wrapper {
+  @apply min-h-full flex justify-center grow flex-col gap-16;
+}
+
+.header__baseline-title {
+  @apply font-recoleta text-7xl leading-none text-white;
+}
+
+.header__baseline-subtitle {
+  @apply text-white text-2xl font-normal;
+}
+
+/* Intro */
+
+.intro {
+  @apply bg-primary-500 py-14;
+}
+
+.intro__wrapper {
+  @apply flex gap-12 flex-col sm:flex-row items-center sm:items-start;
+}
+
+.intro__content {
+  @apply w-full flex flex-col justify-center gap-7;
+}
+
+.intro__photo {
+  @apply rounded-full aspect-square w-44 h-44 border-4 border-white overflow-hidden shrink-0;
+}
+
+.intro__title {
+  @apply font-recoleta text-4xl leading-tight text-white p-0 m-0 text-center sm:text-left;
+
+  span {
+    @apply text-primary-300;
+  }
+}
+
+.intro__paragraph {
+  @apply text-white text-xl font-light text-center sm:text-left;
+}
+
+/* Approach */
+
+.approach {
+  @apply py-20;
+}
+
+.approach__wrapper {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-10;
+}
+
+.approach__content {
+  @apply flex flex-col gap-6;
+}
+
+.approach__title {
+  @apply font-recoleta text-secondary-500 text-5xl font-medium p-0 mb-3.5;
+}
+
+.approach__box {
+  @apply bg-primary-100 p-11 rounded-[44px] flex flex-col gap-7  bg-[url(/dist/images/bg-box.webp)] bg-no-repeat bg-right;
+}
+
+.approach__box-title {
+  @apply font-recoleta text-2xl font-medium text-primary-500;
+}
+
+.approach__list {
+  @apply flex flex-col gap-7;
+}
+
+.approach__list-item {
+  @apply pl-9 bg-[url(/dist/images/list-bullet.svg)] bg-no-repeat bg-[left_top_4px] text-primary-600;
+
+  strong {
+    @apply font-bold text-tertiary-500;
+  }
+}
+
+.philosophy {
+  @apply py-20 bg-tertiary-100;
+}
+
+.philosophy__wrapper {
+  @apply flex flex-col items-center gap-13;
+}
+
+.philosophy__title {
+  @apply text-4xl font-recoleta font-medium text-secondary-500 p-0 m-0;
+}
+
+.philosophy__box-wrapper {
+  @apply grid grid-cols-3 gap-2.5 w-full;
+}
+
+.philosophy__box-item {
+  @apply bg-white px-8 py-10 rounded-[40px];
 }

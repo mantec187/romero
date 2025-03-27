@@ -4,10 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noemi Romero Simon</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="./css/styles.css" rel="stylesheet" />
     <script src="https://www.unpkg.com/css-houdini-squircle@0.3.0/squircle.min.js"></script>
   </head>
   <body>
+    <div class="mobile-menu">
+      <div class="container">
+        <div class="mobile-menu__wrapper">
+          <a href="index.html" class="header__logo-wrapper">
+            <img
+              src="./images/logo-noemi-romero-simon.svg"
+              alt="Noemi Romero Simon"
+              class="header__logo"
+              width="260"
+              height="54"
+            />
+          </a>
+          <div class="mobile-menu__closer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 50 50"><path fill="white" d="m37.304 11.282l1.414 1.414l-26.022 26.02l-1.414-1.413z"/><path fill="white" d="m12.696 11.282l26.022 26.02l-1.414 1.415l-26.022-26.02z"/></svg>
+          </div>
+        </div>
+        <ul class="mobile-menu__list">
+            <li><a href="#who" class="header__link">Qui suis-je</a></li>
+            <li><a href="#approach" class="header__link">Mon approche</a></li>
+            <li><a href="#philosophy" class="header__link">Ma philosophie</a></li>
+            <li><a href="#speciality" class="header__link">Spécialités</a></li>
+            <li><a href="#contact" class="header__link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
     <header class="header">
       <div class="container min-h-full">
         <div class="flex flex-col justify-between min-h-full">
@@ -22,35 +48,45 @@
               />
             </a>
             <div class="header__links-wrapper">
-              <a href="#" class="header__link">Qui suis-je</a>
-              <a href="#" class="header__link">Mon approche</a>
-              <a href="#" class="header__link">Ma philosophie</a>
-              <a href="#" class="header__link">Spécialités</a>
-              <a href="#" class="header__link">Contact</a>
+              <a href="#who" class="header__link">Qui suis-je</a>
+              <a href="#approach" class="header__link">Mon approche</a>
+              <a href="#philosophy" class="header__link">Ma philosophie</a>
+              <a href="#speciality" class="header__link">Spécialités</a>
+              <a href="#contact" class="header__link">Contact</a>
+            </div>
+            <div class="header__mobile-menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path fill="white" fill-rule="evenodd" d="M6 11a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1m0 13a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1m0 13a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1" clip-rule="evenodd"/></svg>
             </div>
           </nav>
           <div class="header__baseline-wrapper">
-            <h1 class="header__baseline-title">
+            <h1 class="header__baseline-title"  data-aos="fade-right">
               Vos émotions <br />sont une boussole
             </h1>
-            <div class="header__baseline-subtitle">
+            <div class="header__baseline-subtitle" data-aos="fade-right">
               Si on suivait sa direction ?
             </div>
           </div>
         </div>
       </div>
+      <div class="header__caroussel-wrapper">
+        <div class="header__caroussel">
+          <img src="./images/header-background-01.webp" alt="Background 01">
+          <img src="./images/header-background-02.webp" alt="Background 02">
+          <img src="./images/header-background-03.webp" alt="Background 03">
+        </div>
+      </div>
     </header>
-    <section class="intro">
+    <section class="intro" id="who">
       <div class="container">
         <div class="intro__wrapper">
-          <div class="intro__photo">
+          <div class="intro__photo" data-aos="fade-right">
             <img src="./images/photo-noemi.webp" alt="Noemi Romero Simon" />
           </div>
           <div class="intro__content">
-            <h2 class="intro__title">
+            <h2 class="intro__title" data-aos="fade-left">
               Bienvenue, <span>je m’appelle Noemi.</span>
             </h2>
-            <p class="intro__paragraph">
+            <p class="intro__paragraph" data-aos="fade-left">
               Psychologue clinicienne, j’accompagne les adolescents (dès 14 ans)
               et les jeunes adultes. Egalement spécialisée en neuro-atypies, je
               réalise des bilans de haut potentiel (QI, dès 16 ans) et propose
@@ -60,10 +96,10 @@
         </div>
       </div>
     </section>
-    <section class="approach">
+    <section class="approach" id="approach">
       <div class="container">
         <div class="approach__wrapper">
-          <div class="approach__content">
+          <div class="approach__content" data-aos="fade-right">
             <h2 class="approach__title">Mon approche</h2>
             <p>
               Mon approche privilégie
@@ -79,7 +115,7 @@
               <strong>trouver votre place</strong>.
             </p>
           </div>
-          <div class="approach__box squircle">
+          <div class="approach__box squircle" data-aos="fade-left">
             <h3 class="approach__box-title">Pourquoi me consulter ?</h3>
             <ul class="approach__list">
               <li class="approach__list-item">
@@ -105,17 +141,191 @@
         </div>
       </div>
     </section>
-    <section class="philosophy">
+    <section class="philosophy" id="philosophy">
       <div class="container">
         <div class="philosophy__wrapper">
-          <h2 class="philosophy__title">Ma Philosophie à moi</h2>
-          <div class="philosophy__box-wrapper">
-            <div class="philosophy__box-item"></div>
-            <div class="philosophy__box-item"></div>
-            <div class="philosophy__box-item"></div>
+          <h2 class="philosophy__title" data-aos="fade-down">Ma Philosophie à moi</h2>
+          <div class="philosophy__box-wrapper" data-aos="fade-up">
+            <div class="philosophy__box-item">
+              <h3 class="philosophy__box-title">A chacun ses objectifs</h3>
+              <p class="philosophy__box-paragraph">
+                Mon accompagnement vise l'autonomie et l'accomplissement
+                d'objectifs concrets adaptés à votre situation.
+              </p>
+              <p class="philosophy__box-paragraph">
+                <strong>Pas de programme standard</strong>
+              </p>
+            </div>
+            <div class="philosophy__box-item">
+              <h3 class="philosophy__box-title">Une “safe place”</h3>
+              <p class="philosophy__box-paragraph">
+                Un espace où l'échange authentique permet d'explorer et
+                transformer ce qui semble insurmontable.
+              </p>
+              <p class="philosophy__box-paragraph">
+                <strong>Autour d’un thé, c’est encore mieux !</strong>
+              </p>
+            </div>
+            <div class="philosophy__box-item">
+              <h3 class="philosophy__box-title">Des particularités uniques</h3>
+              <p class="philosophy__box-paragraph">
+                Une perspective qui reconnaît la richesse et le potentiel unique
+                des fonctionnements cognitifs différents.
+              </p>
+              <p class="philosophy__box-paragraph">
+                <strong>Et ouvre alors de nouvelles perspectives</strong>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  </body>
+    <section class="quote">
+      <div class="container">
+        <h2 class="quote__title" data-aos="zoom-in">
+          “Un esprit <span>arborescent et rapide</span> ouvre d’infinies
+          perspectives. Ce qui semble être une difficulté est en réalité
+          <span>un potentiel exceptionnel</span>”
+        </h2>
+      </div>
+    </section>
+    <section class="speciality" id="speciality">
+      <div class="container">
+        <div class="speciality__wrapper">
+          <h2 class="speciality__title" data-aos="fade-up">Mes spécialités</h2>
+          <h3 class="speciality__subtitle" data-aos="fade-up">Les neuro-atypies</h3>
+          <div class="speciality__content-wrapper">
+            <div class="speciality__content-row">
+              <div class="speciality__infos" data-aos="fade-right">
+                <h4 class="speciality__infos-title text-[#DB7006]">Le Haut Potentiel (HP)</h4>
+                <p class="speciality__infos-paragraph">
+                  Le haut potentiel se caractérise par
+                  <strong
+                    >une pensée complexe, rapide et souvent en
+                    arborescence</strong
+                  >. Je propose à la fois un accompagnement et un diagnostic du
+                  haut potentiel dès 16 ans, pour transformer cette intensité
+                  cognitive en une ressource plutôt qu'une source de décalage ou
+                  d'incompréhension. J’accompagne aussi les parents.</p>
+
+                  <h5 class="speciality__infos-subtitle text-[#DB7006]">Pourquoi le Tournesol ?</h5>
+                  <p class="speciality__infos-tiny-info text-[#DB7006]">Comme le tournesol qui cherche la lumière, l'esprit à haut potentiel est en quête constante de connaissances. Ses graines, disposées selon la suite de Fibonacci, symbolisent une pensée structurée qui rayonne dans toutes les directions.</p>
+                </p>
+              </div>
+              <div class="speciality__visual-wrapper" data-aos="fade-left">
+                <img src="./images/visual-speciality-01.webp" alt="Photo homme HP" class="speciality__visual">
+              </div>
+            </div>
+            <div class="separator h-[94px]" data-aos="fade-up">
+              <hr class="separator__line" />
+              <img src="./images/flower-01.webp" class="separator__flowers h-[94px]" alt="Flowers">
+            </div>
+            <div class="speciality__content-row">
+              <div class="speciality__visual-wrapper" data-aos="fade-right">
+                <img src="./images/visual-speciality-02.webp" alt="Photo homme HP" class="speciality__visual">
+              </div>
+              <div class="speciality__infos" data-aos="fade-left">
+                <h4 class="speciality__infos-title text-[#C65A7D]">Le trouble de l'attention</h4>
+                <p class="speciality__infos-paragraph">
+                  Le trouble déficitaire de l'attention avec ou sans hyper-activité affecte, entre autres, la concentration et la régulation de l'énergie. J'accompagne les personnes concernées pour développer des stratégies adaptées et valoriser les aspects positifs de cette neuro-atypie. J’accompagne aussi les parents.</p>
+                  <p class="speciality__infos-paragraph-italic">Je n'effectue pas le diagnostic du TDAH, mais je peux vous orienter vers les professionnels adaptés.</p>
+
+                  <h5 class="speciality__infos-subtitle text-[#C65A7D]">Pourquoi le Fuchsia ?</h5>
+                  <p class="speciality__infos-tiny-info text-[#C65A7D]">Comme le fuchsia qui danse au vent, cette fleur représente la nature dynamique et créative de l'esprit TDA/H, avec ses mouvements gracieux et ses couleurs vibrantes.</p>
+                </p>
+              </div>
+            </div>
+            <div class="separator h-[94px]" data-aos="fade-up">
+              <hr class="separator__line" />
+              <img src="./images/flower-02.webp" class="separator__flowers h-[94px]" alt="Flowers">
+            </div>
+            <h3 class="speciality__subtitle" data-aos="fade-in">Pour les adolescents & jeunes adultes</h3>
+            <div class="speciality__content-row">
+              <div class="speciality__infos" data-aos="fade-right">
+                <h4 class="speciality__infos-title text-[#79A56F]">Difficultés psycho-affectives et relationnelles</h4>
+                <p class="speciality__infos-paragraph">
+                  À l’adolescence et au début de l’âge adulte, les émotions peuvent être intenses et parfois difficiles à canaliser. La quête de sens, les relations avec l’entourage, et la gestion des ressentis peuvent devenir des défis du quotidien. <strong>Apprendre à mieux comprendre ses émotions</strong> et à les exprimer de façon apaisée permet de retrouver un équilibre et d’avancer plus sereinement.</p>
+  
+                  <h5 class="speciality__infos-subtitle text-[#79A56F]">Pourquoi le Lys ?</h5>
+                  <p class="speciality__infos-tiny-info text-[#79A56F]">Le lys, avec sa fleur délicate et son parfum puissant, symbolise l'hypersensibilité. Sa beauté réside dans sa réceptivité aux subtilités, reflétant la capacité unique des personnes hypersensibles à percevoir les nuances du monde avec profondeur.</p>
+                </p>
+              </div>
+              <div class="speciality__visual-wrapper" data-aos="fade-left">
+                <img src="./images/visual-speciality-03.webp" alt="Photo homme HP" class="speciality__visual">
+              </div>
+            </div>
+            <div class="separator h-[94px]" data-aos="fade-up">
+              <hr class="separator__line" />
+              <img src="./images/flower-03.webp" class="separator__flowers h-[94px]" alt="Flowers">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer" id="contact" data-aos="fade-up">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__title-wrapper">
+            <h2 class="footer__title">Me contacter</h2>
+            <p class="footer__paragraph">Explorons ensemble vos particularités pour <strong>les transformer en ressources.</strong></p>
+          </div>
+          <div class="footer__grid">
+            <div class="footer__grid-item">
+              <strong class="footer__grid-strong">Téléphone/SMS:</strong>
+              <p><a href="tel:+32490367676" class="footer__grid-link">0490.36.76.76</a> (préférence pour les SMS)</p>
+            </div>
+            <div class="footer__grid-item">
+              <strong class="footer__grid-strong">Adresse:</strong>
+              <p>Court Saint-Etienne, à deux pas de la gare</p>
+            </div>
+            <div class="footer__grid-item">
+              <strong class="footer__grid-strong">Email:</strong>
+              <a href="mailto:romeropsymon@gmail.com" class="footer__grid-link">romeropsymon@gmail.com</a>
+            </div>
+            <div class="footer__grid-item">
+              <strong class="footer__grid-strong">Consultations</strong>
+              <p>En cabinet (visioconsultations possibles)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="subfooter">
+      <div class="container">
+        <div class="subfooter__wrapper">
+          <div class="subfooter__infos">© Noemie Romero Simon 2025 - Mentions légales et vie privée</div>
+          <div class="subfooter__brand">
+            <span>Fait avec amour par</span>
+            <img src="./images/logo-bloomstudio.png" width="97" height="9" alt="Bloomstudio" class="subfooter__logo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        disable: 'mobile',
+        duration: 2000,
+        easing: 'ease',
+        once: true,
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const images = document.querySelectorAll('.header__caroussel img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');  
+            currentIndex = (currentIndex + 1) % images.length;  
+            images[currentIndex].classList.add('active');  
+        }
+
+        images[currentIndex].classList.add('active');
+
+        setInterval(showNextImage, 5000);
+    });
+
+    </script>
+</body>
 </html>

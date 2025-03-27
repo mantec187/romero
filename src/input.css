@@ -141,7 +141,15 @@ body {
 /* Mobile Menu */
 
 .mobile-menu {
-  @apply h-screen w-full bg-primary-500 absolute top-0 left-0 z-50 py-11 overflow-hidden hidden;
+  @apply h-screen w-full bg-primary-500 fixed top-0 left-0 z-50 py-11 overflow-hidden hidden;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto; /* Active les interactions */
+  display: block;
 }
 
 .mobile-menu__wrapper {

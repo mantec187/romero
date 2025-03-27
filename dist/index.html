@@ -26,11 +26,11 @@
           </div>
         </div>
         <ul class="mobile-menu__list">
-            <li><a href="#who" class="header__link">Qui suis-je</a></li>
-            <li><a href="#approach" class="header__link">Mon approche</a></li>
-            <li><a href="#philosophy" class="header__link">Ma philosophie</a></li>
-            <li><a href="#speciality" class="header__link">Spécialités</a></li>
-            <li><a href="#contact" class="header__link">Contact</a></li>
+            <li><a href="#who" class="header__link mobile-menu__link">Qui suis-je</a></li>
+            <li><a href="#approach" class="header__link mobile-menu__link">Mon approche</a></li>
+            <li><a href="#philosophy" class="header__link mobile-menu__link">Ma philosophie</a></li>
+            <li><a href="#speciality" class="header__link mobile-menu__link">Spécialités</a></li>
+            <li><a href="#contact" class="header__link mobile-menu__link">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -326,6 +326,39 @@
         setInterval(showNextImage, 5000);
     });
 
+    // Récupération des éléments dans le DOM
+    const mobileMenuButton = document.querySelector('.header__mobile-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuCloser = document.querySelector('.mobile-menu__closer');
+    const menuLinks = document.querySelectorAll('.mobile-menu__link'); // Sélection des liens d'ancre
+
+    // Fonction pour ouvrir le menu (fade-in)
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.style.display = 'flex';       // Réactive l'élément avant l'animation
+        setTimeout(() => {
+            mobileMenu.classList.add('active');  // Ajoute la classe pour l'effet fade-in
+        }, 10);
+    });
+
+    // Fonction pour fermer le menu (fade-out)
+    mobileMenuCloser.addEventListener('click', () => {
+        closeMenu();
+    });
+
+    // Fonction utilitaire pour fermer le menu après l'animation
+    function closeMenu() {
+        mobileMenu.classList.remove('active');  // Supprime la classe pour fade-out
+        setTimeout(() => {
+            mobileMenu.style.display = 'none';  // Cache complètement après la transition
+        }, 2000);  // Délai égal à la durée du fade-out
+    }
+
+    // Ajout de l'événement "fermeture après clic" sur chaque lien
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu();  // Ferme le menu mobile après clic
+        });
+    });
     </script>
 </body>
 </html>

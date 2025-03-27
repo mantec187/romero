@@ -1992,7 +1992,7 @@ body {
   }
 }
 .mobile-menu {
-  position: absolute;
+  position: fixed;
   top: calc(var(--spacing) * 0);
   left: calc(var(--spacing) * 0);
   z-index: 50;
@@ -2002,6 +2002,13 @@ body {
   overflow: hidden;
   background-color: var(--color-primary-500);
   padding-block: calc(var(--spacing) * 11);
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
 }
 .mobile-menu__wrapper {
   display: flex;

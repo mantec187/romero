@@ -58,7 +58,7 @@ body {
 /* Header */
 
 body {
-  @apply relative;
+  @apply relative overflow-x-hidden;
 }
 
 .header {

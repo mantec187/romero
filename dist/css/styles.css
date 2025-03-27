@@ -2362,10 +2362,20 @@ body {
   overflow: hidden;
   border-radius: 60px;
 }
+.speciality__infos {
+  order: 2;
+  @media (width >= 64rem) {
+    order: 0;
+  }
+}
 .speciality__visual {
+  order: 1;
   height: 100%;
   width: 100%;
   object-fit: cover;
+  @media (width >= 64rem) {
+    order: 0;
+  }
 }
 .separator {
   position: relative;

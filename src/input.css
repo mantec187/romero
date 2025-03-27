@@ -331,8 +331,12 @@ body {
   @apply aspect-square overflow-hidden rounded-[60px];
 }
 
+.speciality__infos {
+  @apply order-2 lg:order-none;
+}
+
 .speciality__visual {
-  @apply object-cover w-full h-full;
+  @apply object-cover w-full h-full order-1 lg:order-none;
 }
 
 /* Separator */

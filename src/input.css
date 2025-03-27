@@ -62,7 +62,7 @@ body {
 }
 
 .header {
-  @apply min-h-[705px] py-11 flex relative;
+  @apply min-h-[500px] md:min-h-[705px] py-11 flex relative;
 
   &::before {
     @apply w-full h-[200px] absolute top-0 left-0 z-[15];
@@ -106,11 +106,11 @@ body {
 }
 
 .header__baseline-wrapper {
-  @apply min-h-full flex justify-center grow flex-col gap-16 relative z-20;
+  @apply min-h-full flex justify-center grow flex-col gap-10 md:gap-16 relative z-20;
 }
 
 .header__baseline-title {
-  @apply font-recoleta text-7xl leading-none text-white;
+  @apply font-recoleta text-5xl md:text-7xl leading-none text-white;
 }
 
 .header__baseline-subtitle {
@@ -214,7 +214,7 @@ body {
 }
 
 .approach__title {
-  @apply font-recoleta text-secondary-500 text-5xl font-medium p-0 mb-3.5;
+  @apply font-recoleta text-secondary-500 text-4xl md:text-5xl font-medium p-0 mb-3.5;
 }
 
 .approach__box {
@@ -248,7 +248,7 @@ body {
 }
 
 .philosophy__title {
-  @apply text-4xl font-recoleta font-medium text-secondary-500 p-0 m-0;
+  @apply text-3xl md:text-4xl font-recoleta font-medium text-secondary-500 p-0 m-0;
 }
 
 .philosophy__box-wrapper {
@@ -292,7 +292,7 @@ body {
 }
 
 .speciality__title {
-  @apply text-4xl font-recoleta font-medium text-secondary-500 p-0 mb-20 text-center;
+  @apply text-3xl md:text-4xl font-recoleta font-medium text-secondary-500 p-0 mb-10 md:mb-20 text-center;
 }
 
 .speciality__subtitle {
@@ -308,7 +308,7 @@ body {
 }
 
 .speciality__infos-title {
-  @apply font-recoleta font-medium text-4xl mb-5;
+  @apply font-recoleta font-medium text-3xl md:text-4xl mb-5;
 }
 
 .speciality__infos-paragraph {
@@ -356,7 +356,7 @@ body {
 }
 
 .footer__wrapper {
-  @apply bg-secondary-500 py-10 rounded-[40px] px-20 flex flex-col gap-8;
+  @apply bg-secondary-500 py-10 rounded-[40px] px-10 md:px-20 flex flex-col gap-8;
 }
 
 .footer__title-wrapper {
@@ -364,15 +364,15 @@ body {
 }
 
 .footer__title {
-  @apply text-center text-white font-recoleta text-[44px] font-medium;
+  @apply text-center text-white font-recoleta text-3xl md:text-[44px] font-medium;
 }
 
 .footer__paragraph {
-  @apply text-center text-white text-xl;
+  @apply text-center text-white text-lg leading-tight md:text-xl;
 }
 
 .footer__grid {
-  @apply grid grid-cols-2 grid-rows-2 gap-8;
+  @apply grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-8;
 }
 
 .footer__grid-item {

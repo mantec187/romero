@@ -1821,7 +1821,6 @@
     transform-box: view-box;
   }
 }
-@import url("/src/fonts.css");
 html {
   scroll-behavior: smooth;
 }

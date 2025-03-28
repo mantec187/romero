@@ -80,6 +80,10 @@ body {
   @apply inline-flex shrink-0;
 }
 
+.header__logo-wrapper {
+  @apply w-48 md:w-auto;
+}
+
 .header__nav {
   @apply flex justify-between relative z-20;
 }
@@ -129,7 +133,7 @@ body {
   @apply relative h-full w-full;
 
   > img {
-    @apply absolute object-cover w-full h-full top-0 left-0 opacity-0 transition-all duration-[3s];
+    @apply absolute object-cover w-full h-full top-0 left-0 opacity-0 transition-all duration-[3s] object-[65%_0] md:object-center;
 
     &.active {
       @apply opacity-100;
@@ -142,7 +146,7 @@ body {
 .mobile-menu {
   @apply h-screen w-full bg-primary-500 fixed top-0 left-0 z-50 py-11 overflow-hidden hidden;
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 600ms ease;
 }
 
 .mobile-menu.active {
@@ -210,11 +214,11 @@ body {
 }
 
 .approach__content {
-  @apply flex flex-col gap-6;
+  @apply flex flex-col gap-6 text-center md:text-left;
 }
 
 .approach__title {
-  @apply font-recoleta text-secondary-500 text-4xl md:text-5xl font-medium p-0 mb-3.5;
+  @apply font-recoleta text-secondary-500 text-4xl md:text-5xl text-center md:text-left font-medium p-0 mb-3.5;
 }
 
 .approach__box {
@@ -360,7 +364,7 @@ body {
 }
 
 .footer__wrapper {
-  @apply bg-secondary-500 py-10 rounded-[40px] px-10 md:px-20 flex flex-col gap-8;
+  @apply bg-secondary-500 bg-[url(/dist/images/bg-footer.webp)] bg-[auto_60%] md:bg-[auto_100%] bg-no-repeat bg-right-bottom py-10 rounded-[40px] px-10 md:px-20 flex flex-col gap-8;
 }
 
 .footer__title-wrapper {
@@ -380,7 +384,7 @@ body {
 }
 
 .footer__grid-item {
-  @apply text-sm text-white flex flex-col gap-1.5;
+  @apply text-sm text-white flex flex-col gap-1.5 text-center md:text-left;
 }
 
 .footer__grid-strong {
@@ -402,11 +406,11 @@ body {
 }
 
 .subfooter__wrapper {
-  @apply flex justify-between flex-col gap-2 md:flex-row md:gap-0;
+  @apply flex justify-between flex-col gap-4 md:flex-row md:gap-0;
 }
 
 .subfooter__infos {
-  @apply text-sm text-white text-center md:text-left;
+  @apply text-sm leading-tight text-white text-center md:text-left flex gap-0 md:gap-2 justify-center md:justify-start flex-col md:flex-row;
 }
 
 .subfooter__brand {

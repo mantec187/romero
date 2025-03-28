@@ -12,7 +12,15 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="./css/fonts.css" rel="stylesheet" type="text/css" />
     <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-    <script src="https://www.unpkg.com/css-houdini-squircle@0.3.0/squircle.min.js"></script>
+    
+<script>
+  if ("paintWorklet" in CSS) {
+    CSS.paintWorklet.addModule(
+      "https://www.unpkg.com/css-houdini-squircle/squircle.min.js"
+    );
+  }
+</script>
+
   </head>
   <body>
     <div class="mobile-menu">
@@ -28,7 +36,7 @@
             />
           </a>
           <div class="mobile-menu__closer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 50 50"><path fill="white" d="m37.304 11.282l1.414 1.414l-26.022 26.02l-1.414-1.413z"/><path fill="white" d="m12.696 11.282l26.022 26.02l-1.414 1.415l-26.022-26.02z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50"><path fill="white" d="m37.304 11.282l1.414 1.414l-26.022 26.02l-1.414-1.413z"/><path fill="white" d="m12.696 11.282l26.022 26.02l-1.414 1.415l-26.022-26.02z"/></svg>
           </div>
         </div>
         <ul class="mobile-menu__list">
@@ -61,7 +69,7 @@
               <a href="#contact" class="header__link">Contact</a>
             </div>
             <div class="header__mobile-menu">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path fill="white" fill-rule="evenodd" d="M6 11a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1m0 13a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1m0 13a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1" clip-rule="evenodd"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 48 48"><path fill="white" fill-rule="evenodd" d="M6 11a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1m0 13a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1m0 13a1 1 0 0 1 1-1h34a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1" clip-rule="evenodd"/></svg>
             </div>
           </nav>
           <div class="header__baseline-wrapper">
@@ -222,9 +230,9 @@
                 <img src="./images/visual-speciality-01.webp" alt="Photo homme HP" class="speciality__visual">
               </div>
             </div>
-            <div class="separator h-[94px]" data-aos="fade-up">
+            <div class="separator h-[64px] md:h-[94px]" data-aos="fade-up">
               <hr class="separator__line" />
-              <img src="./images/flower-01.webp" class="separator__flowers h-[94px]" alt="Flowers">
+              <img src="./images/flower-01.webp" class="separator__flowers h-[64px] md:h-[94px]" alt="Flowers">
             </div>
             <div class="speciality__content-row">
               <div class="speciality__visual-wrapper" data-aos="fade-right">
@@ -241,9 +249,9 @@
                 </p>
               </div>
             </div>
-            <div class="separator h-[94px]" data-aos="fade-up">
+            <div class="separator h-[64px] md:h-[94px]" data-aos="fade-up">
               <hr class="separator__line" />
-              <img src="./images/flower-02.webp" class="separator__flowers h-[94px]" alt="Flowers">
+              <img src="./images/flower-02.webp" class="separator__flowers h-[64px] md:h-[94px]" alt="Flowers">
             </div>
             <h3 class="speciality__subtitle" data-aos="fade-in">Pour les adolescents & jeunes adultes</h3>
             <div class="speciality__content-row">
@@ -260,9 +268,9 @@
                 <img src="./images/visual-speciality-03.webp" alt="Photo homme HP" class="speciality__visual">
               </div>
             </div>
-            <div class="separator h-[94px]" data-aos="fade-up">
+            <div class="separator h-[64px] md:h-[94px]" data-aos="fade-up">
               <hr class="separator__line" />
-              <img src="./images/flower-03.webp" class="separator__flowers h-[94px]" alt="Flowers">
+              <img src="./images/flower-03.webp" class="separator__flowers h-[64px] md:h-[94px]" alt="Flowers">
             </div>
           </div>
         </div>
@@ -299,7 +307,7 @@
     <div class="subfooter">
       <div class="container">
         <div class="subfooter__wrapper">
-          <div class="subfooter__infos">© Noemie Romero Simon 2025 - Mentions légales et vie privée</div>
+          <div class="subfooter__infos"><span>© Noemie Romero Simon 2025</span> <span>-</span> <span>Mentions légales et vie privée</span></div>
           <div class="subfooter__brand">
             <span>Fait avec amour par</span>
             <img src="./images/logo-bloomstudio.png" width="97" height="9" alt="Bloomstudio" class="subfooter__logo">
@@ -356,7 +364,7 @@
         mobileMenu.classList.remove('active');  // Supprime la classe pour fade-out
         setTimeout(() => {
             mobileMenu.style.display = 'none';  // Cache complètement après la transition
-        }, 2000);  // Délai égal à la durée du fade-out
+        }, 600);  // Délai égal à la durée du fade-out
     }
 
     // Ajout de l'événement "fermeture après clic" sur chaque lien

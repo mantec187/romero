@@ -2137,6 +2137,7 @@ body {
   line-height: var(--tw-leading, var(--text-4xl--line-height));
   --tw-leading: var(--leading-tight);
   line-height: var(--leading-tight);
+  text-wrap: balance;
   color: var(--color-white);
   @media (width >= 40rem) {
     text-align: left;

@@ -8,6 +8,7 @@
   --color-primary-600: #3e4138;
 
   /* Red */
+  --color-secondary-100: #ffc4e5;
   --color-secondary-300: #ee6e7f;
   --color-secondary-500: #6b3139;
 
@@ -114,7 +115,7 @@ body {
 }
 
 .header__baseline-title {
-  @apply font-recoleta text-5xl md:text-7xl leading-none text-white;
+  @apply font-recoleta text-5xl/12 md:text-7xl/18 text-white text-balance;
 }
 
 .header__baseline-subtitle {
@@ -131,13 +132,25 @@ body {
 
 .header__caroussel {
   @apply relative h-full w-full;
+}
 
-  > img {
-    @apply absolute object-cover w-full h-full top-0 left-0 opacity-0 transition-all duration-[3s] object-[65%_0] md:object-center;
+.header__hero {
+  @apply absolute object-cover w-full h-full top-0 left-0 opacity-0 transition-all duration-[3s] object-[65%_0] md:object-center;
+  &:first-child {
+    @apply opacity-100;
+  }
 
-    &.active {
-      @apply opacity-100;
-    }
+  &.active {
+    @apply opacity-100;
+  }
+}
+
+.header__title {
+  @apply flex flex-col justify-center gap-10 opacity-0 z-0 absolute top-0 left-0 w-full pr-0 md:pr-[40%] h-full;
+  transition: opacity 3s ease;
+
+  &:first-child {
+    @apply opacity-100;
   }
 }
 

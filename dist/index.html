@@ -64,20 +64,38 @@
             </div>
           </nav>
           <div class="header__baseline-wrapper">
-            <h1 class="header__baseline-title"  data-aos="fade-right">
-              Vos émotions <br />sont une boussole
-            </h1>
-            <div class="header__baseline-subtitle" data-aos="fade-right">
-              Si on suivait sa direction ?
+            <div class="header__title header__title-01 active">
+              <h1 class="header__baseline-title"  data-aos="fade-right">
+                Vos émotions <br /><span class="text-primary-300">sont une boussole</span>
+              </h1>
+              <div class="header__baseline-subtitle" data-aos="fade-right">
+                Si on suivait sa direction ?
+              </div>
+            </div>
+            <div class="header__title header__title-02">
+              <h1 class="header__baseline-title"  data-aos="fade-right">
+                Votre esprit ne connaît pas de frontières, <span class="text-tertiary-300">Seulement des horizons.</span>
+              </h1>
+              <div class="header__baseline-subtitle" data-aos="fade-right">
+                On part à la découverte ?
+              </div>
+            </div>
+            <div class="header__title header__title-03">
+              <h1 class="header__baseline-title"  data-aos="fade-right">
+                L'esprit qui danse entre les idées <span class="text-secondary-100">crée des ponts inattendus.</span>
+              </h1>
+              <div class="header__baseline-subtitle" data-aos="fade-right">
+                On les franchit ensemble ?
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="header__caroussel-wrapper">
         <div class="header__caroussel">
-          <img src="./images/header-background-01.webp" alt="Background 01">
-          <img src="./images/header-background-02.webp" alt="Background 02">
-          <img src="./images/header-background-03.webp" alt="Background 03">
+          <img src="./images/header-background-01.webp" alt="Background 01" class="header__hero header__hero-01">
+          <img src="./images/header-background-02.webp" alt="Background 02" class="header__hero header__hero-02">
+          <img src="./images/header-background-03.webp" alt="Background 03" class="header__hero header__hero-03">
         </div>
       </div>
     </header>
@@ -316,20 +334,59 @@
         once: true,
       });
 
-      document.addEventListener('DOMContentLoaded', function () {
-        const images = document.querySelectorAll('.header__caroussel img');
-        let currentIndex = 0;
+      document.addEventListener("DOMContentLoaded", function () {
+      const images = document.querySelectorAll("[class^='header__hero']");
+      const titles = document.querySelectorAll("[class^='header__title']");
 
-        function showNextImage() {
-            images[currentIndex].classList.remove('active');  
-            currentIndex = (currentIndex + 1) % images.length;  
-            images[currentIndex].classList.add('active');  
+      let currentIndex = 0;
+      const slideInterval = 6000; // 6 secondes d’affichage
+      const fadeDuration = 3000;  // 3 secondes pour le crossfade
+
+      function crossFade(outElement, inElement) {
+        let opacityOut = 1; // Fade-out de l'élément courant
+        let opacityIn = 0;  // Fade-in de l'élément suivant
+
+        const fadeStep = 50 / fadeDuration; // Progression par étapes
+
+        function animateFade() {
+          opacityOut -= fadeStep;  // Réduction progressive de l'opacité
+          opacityIn += fadeStep;   // Augmentation progressive de l'opacité
+
+          outElement.style.opacity = opacityOut;
+          inElement.style.opacity = opacityIn;
+
+          if (opacityOut > 0 && opacityIn < 1) {
+            requestAnimationFrame(animateFade);
+          }
         }
+        requestAnimationFrame(animateFade);
+      }
 
-        images[currentIndex].classList.add('active');
+      function showNextSlide() {
+        const currentImage = images[currentIndex];
+        const currentTitle = titles[currentIndex];
 
-        setInterval(showNextImage, 5000);
+        // Calculer le prochain index
+        currentIndex = (currentIndex + 1) % images.length;
+
+        const nextImage = images[currentIndex];
+        const nextTitle = titles[currentIndex];
+
+        // Lancer le crossfade
+        crossFade(currentImage, nextImage);
+        crossFade(currentTitle, nextTitle);
+      }
+
+      // Initialiser les styles d'opacité
+      images.forEach((img, i) => (img.style.opacity = i === 0 ? 1 : 0));
+      titles.forEach((title, i) => (title.style.opacity = i === 0 ? 1 : 0));
+
+      // Lancer le carrousel avec l’intervalle
+      setInterval(showNextSlide, slideInterval);
     });
+
+
+
 
     // Récupération des éléments dans le DOM
     const mobileMenuButton = document.querySelector('.header__mobile-menu');

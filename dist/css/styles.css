@@ -2369,6 +2369,16 @@ body {
   @media (width >= 64rem) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  &:hover {
+    .speciality__visual-wrapper {
+      > img {
+        --tw-scale-x: 105%;
+        --tw-scale-y: 105%;
+        --tw-scale-z: 105%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
 }
 .speciality__infos-title {
   margin-bottom: calc(var(--spacing) * 5);
@@ -2431,6 +2441,13 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 1000ms;
+  transition-duration: 1000ms;
+  --tw-ease: var(--ease-in-out);
+  transition-timing-function: var(--ease-in-out);
   @media (width >= 64rem) {
     order: 0;
   }

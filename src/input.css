@@ -322,6 +322,14 @@ body {
 
 .speciality__content-row {
   @apply grid grid-cols-1 lg:grid-cols-2 gap-9;
+
+  &:hover {
+    .speciality__visual-wrapper {
+      > img {
+        @apply scale-105;
+      }
+    }
+  }
 }
 
 .speciality__infos-title {
@@ -353,7 +361,7 @@ body {
 }
 
 .speciality__visual {
-  @apply object-cover w-full h-full order-1 lg:order-none;
+  @apply object-cover w-full h-full order-1 lg:order-none transition-all duration-1000 ease-in-out;
 }
 
 /* Separator */

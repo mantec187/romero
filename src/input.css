@@ -235,7 +235,7 @@ body {
 }
 
 .approach__box {
-  @apply bg-primary-100 p-11 rounded-[44px] flex flex-col gap-7  bg-[url(/dist/images/bg-box.webp)] bg-no-repeat bg-right;
+  @apply bg-primary-100 p-11 rounded-[44px] flex flex-col gap-7  bg-[url(/images/bg-box.webp)] bg-no-repeat bg-right;
 }
 
 .approach__box-title {
@@ -247,7 +247,7 @@ body {
 }
 
 .approach__list-item {
-  @apply pl-9 bg-[url(/dist/images/list-bullet.svg)] bg-no-repeat bg-[left_top_4px] text-primary-600;
+  @apply pl-9 bg-[url(/images/list-bullet.svg)] bg-no-repeat bg-[left_top_4px] text-primary-600;
 
   strong {
     @apply font-bold text-tertiary-500;
@@ -291,7 +291,7 @@ body {
 /* Quote */
 
 .quote {
-  @apply min-h-[350px] md:min-h-[512px] bg-secondary-500 bg-[url(/dist/images/bg-quote.webp)] bg-no-repeat bg-cover flex justify-center items-center text-center;
+  @apply min-h-[350px] md:min-h-[512px] bg-secondary-500 bg-[url(/images/bg-quote.webp)] bg-no-repeat bg-cover flex justify-center items-center text-center;
 }
 
 .quote__title {
@@ -385,7 +385,7 @@ body {
 }
 
 .footer__wrapper {
-  @apply bg-secondary-500 bg-[url(/dist/images/bg-footer.webp)] bg-[auto_60%] md:bg-[auto_100%] bg-no-repeat bg-right-bottom py-10 rounded-[40px] px-10 md:px-20 flex flex-col gap-8;
+  @apply bg-secondary-500 bg-[url(/images/bg-footer.webp)] bg-[auto_60%] md:bg-[auto_100%] bg-no-repeat bg-right-bottom py-10 rounded-[40px] px-10 md:px-20 flex flex-col gap-8;
 }
 
 .footer__title-wrapper {
